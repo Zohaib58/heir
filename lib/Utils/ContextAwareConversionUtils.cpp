@@ -66,10 +66,10 @@ FailureOr<Value> encodeCleartextAsPlaintext(
   int64_t numSlots =
       cleartextTensorTy.getDimSize(cleartextTensorTy.getRank() - 1);
   if (cleartextTensorTy.getRank() == 1) {
-    Value encodeOp =
-        lwe::RLWEEncodeOp::create(builder, plaintextTy, cleartext,
-                                  plaintextEncoding, plaintextSpace.getRing())
-            .getResult();
+    Value encodeOp = lwe::RLWEEncodeOp::create(
+                         builder, plaintextTy, cleartext, plaintextEncoding,
+                         plaintextSpace.getRing(), IntegerAttr())
+                         .getResult();
     return encodeOp;
   }
 
@@ -87,10 +87,10 @@ FailureOr<Value> encodeCleartextAsPlaintext(
     SmallVector<OpFoldResult> strides(2, builder.getIndexAttr(1));
     auto slice = tensor::ExtractSliceOp::create(builder, sliceTy, cleartext,
                                                 offsets, sizes, strides);
-    Value encodedSlice =
-        lwe::RLWEEncodeOp::create(builder, plaintextTy, slice,
-                                  plaintextEncoding, plaintextSpace.getRing())
-            .getResult();
+    Value encodedSlice = lwe::RLWEEncodeOp::create(
+                             builder, plaintextTy, slice, plaintextEncoding,
+                             plaintextSpace.getRing(), IntegerAttr())
+                             .getResult();
     encodedSlices.push_back(encodedSlice);
   }
 

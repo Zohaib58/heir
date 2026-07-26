@@ -89,7 +89,7 @@ LogicalResult ConvertClientConceal::lowerToTrivialEncryption(
   auto encoded = lwe::RLWEEncodeOp::create(
       rewriter, op.getLoc(), encodeOpResultTy, op.getCleartext(),
       ctTy.getPlaintextSpace().getEncoding(),
-      ctTy.getPlaintextSpace().getRing());
+      ctTy.getPlaintextSpace().getRing(), IntegerAttr());
   auto newOp =
       lwe::TrivialEncryptOp::create(rewriter, op.getLoc(), resultTy, encoded);
   newOp->setAttrs(op->getAttrs());
@@ -146,10 +146,10 @@ LogicalResult ConvertClientConceal::matchAndRewrite(
                                                 resultCtTy.getPlaintextSpace());
 
   auto encryptFn = [&](Value cleartext) -> lwe::RLWEEncryptOp {
-    auto encoded =
-        lwe::RLWEEncodeOp::create(rewriter, op.getLoc(), plaintextTy, cleartext,
-                                  resultCtTy.getPlaintextSpace().getEncoding(),
-                                  resultCtTy.getPlaintextSpace().getRing());
+    auto encoded = lwe::RLWEEncodeOp::create(
+        rewriter, op.getLoc(), plaintextTy, cleartext,
+        resultCtTy.getPlaintextSpace().getEncoding(),
+        resultCtTy.getPlaintextSpace().getRing(), IntegerAttr());
     auto encryptOp = lwe::RLWEEncryptOp::create(
         rewriter, op.getLoc(), resultCtTy, encoded.getResult(), keyBlockArg);
     // Copy attributes from the original op to preserve any mgmt attrs needed by

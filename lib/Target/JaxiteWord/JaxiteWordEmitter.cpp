@@ -891,6 +891,15 @@ LogicalResult JaxiteWordEmitter::printOperation(scf::IfOp op) {
 
   os << "if " << variableNames->getNameForValue(op.getCondition()) << ":\n";
   os.indent();
+  auto blockEmitsStatement = [&](Block& block) {
+    return llvm::any_of(block, [&](Operation& nested) {
+      auto yield = dyn_cast<scf::YieldOp>(nested);
+      if (!yield) return true;
+      return llvm::any_of(op.getResultTypes(),
+                          [](Type type) { return !isa<ShapedType>(type); });
+    });
+  };
+  if (!blockEmitsStatement(*op.thenBlock())) os << "pass\n";
   for (Operation& thenOp : *op.thenBlock()) {
     if (failed(translate(thenOp))) {
       return thenOp.emitOpError() << "Failed to translate if then block";
@@ -898,14 +907,17 @@ LogicalResult JaxiteWordEmitter::printOperation(scf::IfOp op) {
   }
   os.unindent();
 
-  os << "else:\n";
-  os.indent();
-  for (Operation& elseOp : *op.elseBlock()) {
-    if (failed(translate(elseOp))) {
-      return elseOp.emitOpError() << "Failed to translate if else block";
+  bool hasElseStatement = blockEmitsStatement(*op.elseBlock());
+  if (hasElseStatement) {
+    os << "else:\n";
+    os.indent();
+    for (Operation& elseOp : *op.elseBlock()) {
+      if (failed(translate(elseOp))) {
+        return elseOp.emitOpError() << "Failed to translate if else block";
+      }
     }
+    os.unindent();
   }
-  os.unindent();
 
   return success();
 }

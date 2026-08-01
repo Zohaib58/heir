@@ -95,6 +95,33 @@ func.func @test_mul_plain(%ctx: !jaxiteword.crypto_context<>, %ct: !ct_L1, %pt: 
   return %out : !ct_L1
 }
 
+// CHECK: def test_if_empty_else(
+// CHECK: if {{.*}}:
+// CHECK: {{.*}}[0] = {{.*}}
+// CHECK-NOT: else:
+func.func @test_if_empty_else(%condition: i1, %output: memref<1xi32>) {
+  scf.if %condition {
+    %c0 = arith.constant 0 : index
+    %c1 = arith.constant 1 : i32
+    memref.store %c1, %output[%c0] : memref<1xi32>
+  } else {
+  }
+  return
+}
+
+// CHECK: def test_if_shaped_yields(
+// CHECK: if {{.*}}:
+// CHECK: pass
+// CHECK-NOT: else:
+func.func @test_if_shaped_yields(%condition: i1, %input: tensor<1xi32>) -> tensor<1xi32> {
+  %result = scf.if %condition -> tensor<1xi32> {
+    scf.yield %input : tensor<1xi32>
+  } else {
+    scf.yield %input : tensor<1xi32>
+  }
+  return %result : tensor<1xi32>
+}
+
 // CHECK: def test_floor_div_si(
 // CHECK: {{.*}} = {{.*}} // {{.*}}
 func.func @test_floor_div_si(%lhs: i32, %rhs: i32) -> i32 {

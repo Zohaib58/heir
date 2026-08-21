@@ -1,0 +1,2 @@
+xprof_status=CAPTURE_COMPLETE xprof_path=/home/zohaib/heir-private/benchmark-results/alexnet-16k-tpu-xprof/alexnet-tiny-16k-16384-tpu-20260818T034919Z/xprof
+xprof_metadata=/home/zohaib/heir-private/benchmark-results/alexnet-16k-tpu-xprof/alexnet-tiny-16k-16384-tpu-20260818T034919Z/xprof_capture.json

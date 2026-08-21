@@ -1,0 +1,162 @@
+{
+  "model": "CROSS LeNet depth-7",
+  "entry_point": "lenet",
+  "input_shape": [
+    1,
+    1,
+    28,
+    28
+  ],
+  "output_shape": [
+    10
+  ],
+  "weights_dir": "/home/zohaib/CROSS_dev/demos/maple_data",
+  "sources": {
+    "lenet_conv1_W.bin": {
+      "shape": [
+        4,
+        1,
+        5,
+        5
+      ],
+      "values": 100,
+      "bytes": 800,
+      "sha256": "e3db154442e4ee8fc63f19db93c505e9891e52bccd28a25447be8185fe07d306"
+    },
+    "lenet_conv1_b.bin": {
+      "shape": [
+        4
+      ],
+      "values": 4,
+      "bytes": 32,
+      "sha256": "6d1f57e8a6f3db59203a1bda914826de303f10ec2383be5b1f95e8a9d36a219e"
+    },
+    "lenet_conv2_W.bin": {
+      "shape": [
+        8,
+        4,
+        5,
+        5
+      ],
+      "values": 800,
+      "bytes": 6400,
+      "sha256": "d4d918050d213efbab463d3af076eea443abba0ad3e5085b8a4d9bc966b1f8a1"
+    },
+    "lenet_conv2_b.bin": {
+      "shape": [
+        8
+      ],
+      "values": 8,
+      "bytes": 64,
+      "sha256": "7a2e1248de7be624770ac54055395df8061bb6c760fa3e3ed63d12f629f52e0b"
+    },
+    "lenet_fc1_W.bin": {
+      "shape": [
+        32,
+        392
+      ],
+      "values": 12544,
+      "bytes": 100352,
+      "sha256": "f194940b192ee50437c3b59693cebbff79b979fe654351395a3368c16f09eb0c"
+    },
+    "lenet_fc1_b.bin": {
+      "shape": [
+        32
+      ],
+      "values": 32,
+      "bytes": 256,
+      "sha256": "64aeb8047e4fd25efa718a852551999635754c5b96b876aac21523f67450c69d"
+    },
+    "lenet_fc2_W.bin": {
+      "shape": [
+        10,
+        32
+      ],
+      "values": 320,
+      "bytes": 2560,
+      "sha256": "e3038a95c7aec3ee277715ff8aae63c43f2759168cff1795e351485d47e92ae9"
+    },
+    "lenet_fc2_b.bin": {
+      "shape": [
+        10
+      ],
+      "values": 10,
+      "bytes": 80,
+      "sha256": "3e76d36ada3a957836632cf5a00273101f364bfe680e33fe4cd58ad8caedba74"
+    }
+  },
+  "constant_shapes": {
+    "w1": [
+      784,
+      784
+    ],
+    "b1": [
+      784
+    ],
+    "w2": [
+      392,
+      784
+    ],
+    "b2": [
+      392
+    ],
+    "w3": [
+      32,
+      392
+    ],
+    "b3": [
+      32
+    ],
+    "w4": [
+      10,
+      32
+    ],
+    "b4": [
+      10
+    ]
+  },
+  "verification": {
+    "seed": 42,
+    "trials": [
+      {
+        "trial": 0,
+        "max_abs_error": 1.4421944072307014e-07
+      },
+      {
+        "trial": 1,
+        "max_abs_error": 1.6737414548773089e-07
+      },
+      {
+        "trial": 2,
+        "max_abs_error": 1.453179176436059e-07
+      }
+    ],
+    "max_abs_error": 1.6737414548773089e-07
+  },
+  "crypto": {
+    "ring_degree": 2048,
+    "slot_count": 1024,
+    "q_towers": [
+      536903681,
+      536924161,
+      536952833,
+      536973313,
+      536977409,
+      536989697,
+      537026561,
+      537047041,
+      537071617
+    ],
+    "p_towers": [
+      2147565569,
+      2147573761,
+      2147577857,
+      2147721217
+    ],
+    "scaling_factor": 288276558458736641,
+    "dnum": 4,
+    "r": 32,
+    "c": 64,
+    "composite_degree": 1
+  }
+}

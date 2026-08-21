@@ -1,0 +1,6 @@
+
+[2026-08-19T04:32:29Z] Starting lenet-2k CPU correctness
+Terminated
+[2026-08-19T04:33:32Z] lenet-2k correctness failed with status 143; skipping its profile
+
+[2026-08-19T04:33:32Z] Starting lenet-16k CPU correctness

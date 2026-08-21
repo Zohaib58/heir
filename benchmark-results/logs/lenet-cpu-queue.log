@@ -1,0 +1,31 @@
+
+[2026-08-19T04:33:33Z] Starting lenet-8k CPU correctness
+result_json=/home/zohaib/heir-private/benchmark-results/lenet-8k-cpu-correctness/lenet-8k-8192-cpu-20260819T043341Z/result.json
+ordinary_status=PASS max_error=5.628891e-05
+calibrated_status=PASS max_error=5.027076e-06
+compute_median_ms=3528273.906
+[2026-08-19T05:52:28Z] lenet-8k correctness passed; starting operation profile
+result_json=/home/zohaib/heir-private/benchmark-results/lenet-8k-cpu-operations/lenet-8k-8192-cpu-20260819T055236Z/result.json
+ordinary_status=PASS max_error=5.628891e-05
+calibrated_status=PASS max_error=5.027076e-06
+compute_median_ms=3539372.898
+[2026-08-19T07:11:53Z] lenet-8k operation profile exited with status 0
+
+[2026-08-19T07:11:53Z] Starting lenet-16k CPU correctness
+result_json=/home/zohaib/heir-private/benchmark-results/lenet-16k-cpu-correctness/lenet-16k-16384-cpu-20260819T071201Z/result.json
+ordinary_status=PASS max_error=3.721543e-05
+calibrated_status=PASS max_error=6.068378e-06
+compute_median_ms=6752094.907
+[2026-08-19T09:46:25Z] lenet-16k correctness passed; starting operation profile
+result_json=/home/zohaib/heir-private/benchmark-results/lenet-16k-cpu-operations/lenet-16k-16384-cpu-20260819T094633Z/result.json
+ordinary_status=PASS max_error=3.721543e-05
+calibrated_status=PASS max_error=6.068378e-06
+compute_median_ms=6811129.456
+[2026-08-19T12:23:00Z] lenet-16k operation profile exited with status 0
+
+[2026-08-19T12:23:00Z] Starting lenet-32k CPU correctness
+./tests/CROSS/run_lenet_cpu_queue.sh: line 18: 1743957 Killed                  python3 "$RUNNER" --model "$model" --device cpu --warmups 0 --repeats 1 --output-dir "$correctness_dir" 2>&1
+     1743958 Done                    | tee "$correctness_log"
+[2026-08-19T17:10:19Z] lenet-32k correctness failed with status 137; skipping its profile
+
+[2026-08-19T17:10:19Z] LeNet CPU queue complete

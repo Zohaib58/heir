@@ -1,0 +1,4 @@
+result_json=/home/zohaib/heir-private/benchmark-results/lenet-8k-cpu-operations/lenet-8k-8192-cpu-20260819T055236Z/result.json
+ordinary_status=PASS max_error=5.628891e-05
+calibrated_status=PASS max_error=5.027076e-06
+compute_median_ms=3539372.898

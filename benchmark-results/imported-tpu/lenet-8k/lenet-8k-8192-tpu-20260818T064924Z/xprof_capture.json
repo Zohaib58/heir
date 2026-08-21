@@ -1,0 +1,6 @@
+{
+  "status": "CAPTURE_COMPLETE",
+  "capture_duration_seconds": 30.0,
+  "correctness": "skipped; validated in a separate benchmark run",
+  "xprof_path": "/home/zohaib/heir-private/benchmark-results/lenet-8k-tpu-xprof/lenet-8k-8192-tpu-20260818T064924Z/xprof"
+}

@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "repository": "EfficientPPML/CROSS_dev",
+    "commit": "78e76a577d7c20ff2441050ac17f95e5830d022e",
+    "generator": "demos/security_params.py",
+    "security_target": "128-bit classical, OpenFHE 1.5.1 uniform-ternary table",
+    "heir_lowering_contract": "degree is the polynomial ring degree from ckks.schemeParam; slot_count is degree/2 and is passed to --torch-linalg-to-ckks=ciphertext-degree"
+  },
+  "profiles": {
+    "alexnet-tiny-4k": {
+      "degree": 4096,
+      "slot_count": 2048,
+      "q_towers": [
+        536813569,
+        536690689,
+        536641537,
+        536616961,
+        536608769,
+        536543233,
+        536494081,
+        536338433,
+        536322049
+      ],
+      "p_towers": [
+        2147377153,
+        2147352577,
+        2147295233,
+        2147205121
+      ],
+      "scaling_factor": 287650127344009217,
+      "log_default_scale": 58,
+      "dnum": 4,
+      "r": 64,
+      "c": 64,
+      "composite_degree": 1,
+      "security_qualified": false,
+      "security_note": "Existing CROSS correctness/benchmark parameter set; no 128-bit security claim."
+    },
+    "lenet-2k": {
+      "degree": 2048,
+      "slot_count": 1024,
+      "q_towers": [
+        536903681,
+        536924161,
+        536952833,
+        536973313,
+        536977409,
+        536989697,
+        537026561,
+        537047041,
+        537071617
+      ],
+      "p_towers": [
+        2147565569,
+        2147573761,
+        2147577857,
+        2147721217
+      ],
+      "scaling_factor": 288276558458736641,
+      "log_default_scale": 58,
+      "dnum": 4,
+      "r": 32,
+      "c": 64,
+      "composite_degree": 1,
+      "security_qualified": false,
+      "security_note": "Existing CROSS correctness/benchmark parameter set; no 128-bit security claim."
+    },
+    "cd2-8k": {
+      "degree": 8192,
+      "slot_count": 4096,
+      "q_towers": [
+        2147352577,
+        1073135617,
+        1075003393,
+        1072857089,
+        1073184769,
+        1073053697,
+        1074429953,
+        1074610177,
+        1074282497,
+        1073233921,
+        1074266113,
+        1073971201,
+        1073299457,
+        1073430529,
+        1073872897,
+        1073479681,
+        1073643521,
+        1073692673
+      ],
+      "p_towers": [
+        2147205121,
+        2147074049,
+        2146959361,
+        2146713601
+      ],
+      "scaling_factor": 1152763181911621633,
+      "log_default_scale": 60,
+      "dnum": 5,
+      "r": 64,
+      "c": 128,
+      "composite_degree": 2,
+      "qp_bits": 665,
+      "security_ceiling": 218,
+      "security_qualified": false,
+      "security_note": "Experimental runtime configuration; not 128-bit secure."
+    },
+    "cd2-16k": {
+      "degree": 16384,
+      "slot_count": 8192,
+      "q_towers": [
+        2147352577,
+        1070727169,
+        1076002817,
+        1076789249,
+        1071087617,
+        1071415297,
+        1074429953,
+        1075937281,
+        1071513601,
+        1072496641,
+        1074266113,
+        1072857089,
+        1073184769,
+        1073053697,
+        1073872897,
+        1073971201,
+        1073479681,
+        1073643521
+      ],
+      "p_towers": [
+        2146959361,
+        2146336769,
+        2146041857,
+        2145976321
+      ],
+      "scaling_factor": 1152534504430796801,
+      "log_default_scale": 60,
+      "dnum": 5,
+      "r": 128,
+      "c": 128,
+      "composite_degree": 2,
+      "qp_bits": 665,
+      "security_ceiling": 438,
+      "security_qualified": false,
+      "security_note": "Experimental runtime configuration; not 128-bit secure."
+    },
+    "cd2-32k": {
+      "degree": 32768,
+      "slot_count": 16384,
+      "q_towers": [
+        2147352577,
+        1065484289,
+        1081212929,
+        1082982401,
+        1065811969,
+        1068236801,
+        1079443457,
+        1080360961,
+        1068433409,
+        1068564481,
+        1077477377,
+        1069219841,
+        1070727169,
+        1071513601,
+        1073872897,
+        1074266113,
+        1072496641,
+        1073479681
+      ],
+      "p_towers": [
+        2146959361,
+        2146041857,
+        2145976321,
+        2144796673
+      ],
+      "scaling_factor": 1151303352054251521,
+      "log_default_scale": 60,
+      "dnum": 5,
+      "r": 128,
+      "c": 256,
+      "composite_degree": 2,
+      "qp_bits": 665,
+      "security_ceiling": 881,
+      "security_qualified": true,
+      "security_note": "Meets the 128-bit classical OpenFHE 1.5.1 uniform-ternary ceiling."
+    }
+  }
+}

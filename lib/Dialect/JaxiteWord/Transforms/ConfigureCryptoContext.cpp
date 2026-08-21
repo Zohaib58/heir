@@ -31,6 +31,8 @@ namespace mlir {
 namespace heir {
 namespace jaxiteword {
 
+constexpr double kDefaultScalingFactor = 563019763943521.0;
+
 struct Config {
   SmallVector<int64_t> rotIndices;
   int64_t degree;
@@ -159,7 +161,8 @@ struct ConfigureCryptoContext
 
     config.degree = 0;
     config.numSlots = 0;
-    config.scalingFactor = scalingFactor;
+    config.scalingFactor =
+        scalingFactor > 0.0 ? scalingFactor : kDefaultScalingFactor;
     config.qTowers = {};
     config.pTowers = {};
 
@@ -168,8 +171,10 @@ struct ConfigureCryptoContext
       int logN = schemeParamAttr.getLogN();
       config.degree = 1 << logN;
       config.numSlots = 1 << (logN - 1);
-      config.scalingFactor =
-          std::pow(2.0, schemeParamAttr.getLogDefaultScale());
+      if (scalingFactor <= 0.0) {
+        config.scalingFactor =
+            std::pow(2.0, schemeParamAttr.getLogDefaultScale());
+      }
 
       auto qArr = schemeParamAttr.getQ().asArrayRef();
       config.qTowers.assign(qArr.begin(), qArr.end());

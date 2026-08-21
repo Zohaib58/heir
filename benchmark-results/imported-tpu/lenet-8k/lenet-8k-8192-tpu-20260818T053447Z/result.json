@@ -1,0 +1,1107 @@
+{
+  "model": "lenet-8k",
+  "timestamp_utc": "20260818T053447Z",
+  "manifest": "/home/zohaib/heir-private/tests/CROSS/benchmark_models.json",
+  "configuration": {
+    "enabled": true,
+    "mlir_path": "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192.mlir",
+    "generated_python_path": "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py",
+    "pristine_python_path": "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py",
+    "entry_point": "lenet",
+    "adapter": "lenet",
+    "input_shape": [
+      1,
+      1,
+      28,
+      28
+    ],
+    "output_shape": [
+      10
+    ],
+    "trained_weight_source": "/home/zohaib/CROSS_dev/demos/maple_data/lenet_*.bin",
+    "seed": 42,
+    "correctness": {
+      "abs_tol": 0.15,
+      "rel_tol": 0.15,
+      "require_argmax_match": true
+    },
+    "crypto_profile": "cd2-8k",
+    "computation_sha256": "987b368dc78f2a8cbfed1cc15da9e75508298c72c99e25a02649f6a8682677c7",
+    "notes": "Experimental CD2 runtime parameters; not 128-bit secure. Generated Python is unpatched.",
+    "crypto": {
+      "slot_count": 4096,
+      "q_towers": [
+        2147352577,
+        1073135617,
+        1075003393,
+        1072857089,
+        1073184769,
+        1073053697,
+        1074429953,
+        1074610177,
+        1074282497,
+        1073233921,
+        1074266113,
+        1073971201,
+        1073299457,
+        1073430529,
+        1073872897,
+        1073479681,
+        1073643521,
+        1073692673
+      ],
+      "p_towers": [
+        2147205121,
+        2147074049,
+        2146959361,
+        2146713601
+      ],
+      "scaling_factor": 1.1527631819116216e+18,
+      "log_default_scale": 60,
+      "dnum": 5,
+      "r": 64,
+      "c": 128,
+      "composite_degree": 2,
+      "qp_bits": 665,
+      "security_ceiling": 218,
+      "security_qualified": false,
+      "security_note": "Experimental runtime configuration; not 128-bit secure.",
+      "output_scale": 1.1527631819116216e+18,
+      "batch": 1,
+      "ring_degree": 8192
+    }
+  },
+  "environment": {
+    "requested_device": "tpu",
+    "jax_backend": "tpu",
+    "jax_devices": [
+      "TPU_0(process=0,(0,0,0,0))",
+      "TPU_1(process=0,(1,0,0,0))",
+      "TPU_2(process=0,(0,1,0,0))",
+      "TPU_3(process=0,(1,1,0,0))",
+      "TPU_4(process=0,(0,2,0,0))",
+      "TPU_5(process=0,(1,2,0,0))",
+      "TPU_6(process=0,(0,3,0,0))",
+      "TPU_7(process=0,(1,3,0,0))"
+    ],
+    "python": "3.12.14 (main, Aug 14 2026, 15:34:45) [Clang 22.1.3 ]",
+    "cross_root": "/home/zohaib/CROSS_dev"
+  },
+  "iterations": {
+    "warmups": 0,
+    "repeats": 1
+  },
+  "measurement_mode": "operation_profile",
+  "integrity": {
+    "pristine": {
+      "sha256": "987b368dc78f2a8cbfed1cc15da9e75508298c72c99e25a02649f6a8682677c7",
+      "operation_counts": {
+        "add": 1586,
+        "add_plain": 4,
+        "matvec": 0,
+        "multiply": 3,
+        "plaintext_ciphertext_multiply": 1584,
+        "relinearize": 3,
+        "rescale": 37,
+        "rotate": 128,
+        "square": 0
+      }
+    },
+    "runnable": {
+      "sha256": "987b368dc78f2a8cbfed1cc15da9e75508298c72c99e25a02649f6a8682677c7",
+      "operation_counts": {
+        "add": 1586,
+        "add_plain": 4,
+        "matvec": 0,
+        "multiply": 3,
+        "plaintext_ciphertext_multiply": 1584,
+        "relinearize": 3,
+        "rescale": 37,
+        "rotate": 128,
+        "square": 0
+      }
+    },
+    "passed": true
+  },
+  "correctness": {
+    "ordinary": {
+      "passed": true,
+      "finite": true,
+      "nonzero": true,
+      "max_error": 5.628891371856071e-05,
+      "relative_error": 1.1275890172446791e-06,
+      "actual_argmax": 4,
+      "expected_argmax": 4,
+      "argmax_match": true,
+      "actual": [
+        -11.74085807800293,
+        -15.002555847167969,
+        -19.61827278137207,
+        -21.49928092956543,
+        49.91965103149414,
+        -10.955175399780273,
+        -9.000777244567871,
+        -0.8806380033493042,
+        10.389496803283691,
+        23.373828887939453
+      ],
+      "expected": [
+        -11.740866638379742,
+        -15.002566377754825,
+        -19.618289154281275,
+        -21.499298671581155,
+        49.91970732040786,
+        -10.955186783276412,
+        -9.00078716956192,
+        -0.880639964702949,
+        10.389509403161945,
+        23.373854942249842
+      ]
+    },
+    "calibrated": {
+      "passed": true,
+      "finite": true,
+      "nonzero": true,
+      "max_error": 5.027076150909693e-06,
+      "relative_error": 1.0070323767412305e-07,
+      "actual_argmax": 4,
+      "expected_argmax": 4,
+      "argmax_match": true,
+      "actual": [
+        -11.740870253282612,
+        -15.002571404830976,
+        -19.618293125537413,
+        -21.4993032243378,
+        49.91970279821417,
+        -10.95518676030636,
+        -9.00078657838143,
+        -0.8806389165716529,
+        10.389507577200598,
+        23.37385312661963
+      ],
+      "expected": [
+        -11.740866638379742,
+        -15.002566377754825,
+        -19.618289154281275,
+        -21.499298671581155,
+        49.91970732040786,
+        -10.955186783276412,
+        -9.00078716956192,
+        -0.880639964702949,
+        10.389509403161945,
+        23.373854942249842
+      ]
+    }
+  },
+  "ciphertext_shape": [
+    1,
+    2,
+    64,
+    128,
+    4
+  ],
+  "timings": {
+    "generate_crypto_context": {
+      "samples_ms": [
+        0.025789999995140533
+      ],
+      "median_ms": 0.025789999995140533,
+      "min_ms": 0.025789999995140533,
+      "max_ms": 0.025789999995140533,
+      "stddev_ms": 0.0
+    },
+    "keygen_pke": {
+      "samples_ms": [
+        3997.8910639999867
+      ],
+      "median_ms": 3997.8910639999867,
+      "min_ms": 3997.8910639999867,
+      "max_ms": 3997.8910639999867,
+      "stddev_ms": 0.0
+    },
+    "keygen_eval": {
+      "samples_ms": [
+        15231.71821599999
+      ],
+      "median_ms": 15231.71821599999,
+      "min_ms": 15231.71821599999,
+      "max_ms": 15231.71821599999,
+      "stddev_ms": 0.0
+    },
+    "eval_key_layout": {
+      "samples_ms": [
+        905.5664219999926
+      ],
+      "median_ms": 905.5664219999926,
+      "min_ms": 905.5664219999926,
+      "max_ms": 905.5664219999926,
+      "stddev_ms": 0.0
+    },
+    "configure_crypto_context": {
+      "samples_ms": [
+        1317155.6673700002
+      ],
+      "median_ms": 1317155.6673700002,
+      "min_ms": 1317155.6673700002,
+      "max_ms": 1317155.6673700002,
+      "stddev_ms": 0.0
+    },
+    "encrypt": {
+      "samples_ms": [
+        856.845495000016
+      ],
+      "median_ms": 856.845495000016,
+      "min_ms": 856.845495000016,
+      "max_ms": 856.845495000016,
+      "stddev_ms": 0.0
+    },
+    "preprocessing": {
+      "samples_ms": [
+        127439.07817499986
+      ],
+      "median_ms": 127439.07817499986,
+      "min_ms": 127439.07817499986,
+      "max_ms": 127439.07817499986,
+      "stddev_ms": 0.0
+    },
+    "preprocessed_compute": {
+      "samples_ms": [
+        2385119.7701590005
+      ],
+      "median_ms": 2385119.7701590005,
+      "min_ms": 2385119.7701590005,
+      "max_ms": 2385119.7701590005,
+      "stddev_ms": 0.0
+    },
+    "decrypt": {
+      "samples_ms": [
+        1285.8979479997288
+      ],
+      "median_ms": 1285.8979479997288,
+      "min_ms": 1285.8979479997288,
+      "max_ms": 1285.8979479997288,
+      "stddev_ms": 0.0
+    },
+    "online_total": {
+      "samples_ms": [
+        2514701.591777
+      ],
+      "median_ms": 2514701.591777,
+      "min_ms": 2514701.591777,
+      "max_ms": 2514701.591777,
+      "stddev_ms": 0.0
+    }
+  },
+  "scales": {
+    "output": [
+      1.1527631819116216e+18
+    ],
+    "calibrated": [
+      0.9999989630002359
+    ]
+  },
+  "operation_profile": {
+    "online.add": {
+      "count": 1586,
+      "total_ms": 1472.1264339927984,
+      "callsites": {
+        "<unknown>": {
+          "count": 1586,
+          "total_ms": 1472.1264339927984
+        }
+      },
+      "average_ms": 0.9282007780534668
+    },
+    "online.add_plain": {
+      "count": 4,
+      "total_ms": 238.63056000027427,
+      "callsites": {
+        "<unknown>": {
+          "count": 4,
+          "total_ms": 238.63056000027427
+        }
+      },
+      "average_ms": 59.65764000006857
+    },
+    "online.decrypt": {
+      "count": 2,
+      "total_ms": 214.43522099889378,
+      "callsites": {
+        "<unknown>": {
+          "count": 2,
+          "total_ms": 214.43522099889378
+        }
+      },
+      "average_ms": 107.21761049944689
+    },
+    "online.encode": {
+      "count": 5,
+      "total_ms": 802.5007460000779,
+      "callsites": {
+        "<unknown>": {
+          "count": 5,
+          "total_ms": 802.5007460000779
+        }
+      },
+      "average_ms": 160.50014920001558
+    },
+    "online.encode_at_level": {
+      "count": 1584,
+      "total_ms": 101647.08807501357,
+      "callsites": {
+        "<unknown>": {
+          "count": 1584,
+          "total_ms": 101647.08807501357
+        }
+      },
+      "average_ms": 64.17114146149846
+    },
+    "online.encrypt": {
+      "count": 1,
+      "total_ms": 328.34950699998444,
+      "callsites": {
+        "<unknown>": {
+          "count": 1,
+          "total_ms": 328.34950699998444
+        }
+      },
+      "average_ms": 328.34950699998444
+    },
+    "online.multiply_no_relinearize": {
+      "count": 3,
+      "total_ms": 2186.846840999351,
+      "callsites": {
+        "<unknown>": {
+          "count": 3,
+          "total_ms": 2186.846840999351
+        }
+      },
+      "average_ms": 728.9489469997837
+    },
+    "online.plaintext_ciphertext_multiply": {
+      "count": 1584,
+      "total_ms": 3371.8395659916496,
+      "callsites": {
+        "<unknown>": {
+          "count": 1584,
+          "total_ms": 3371.8395659916496
+        }
+      },
+      "average_ms": 2.128686594691698
+    },
+    "online.polynomial_allocation": {
+      "count": 2711,
+      "total_ms": 2162029.843487009,
+      "callsites": {
+        "/home/zohaib/CROSS_dev/jaxite_word/ckks_ctx.py:1544:_polynomial_from_flat_array": {
+          "count": 1589,
+          "total_ms": 242.9104049979287
+        },
+        "/home/zohaib/CROSS_dev/jaxite_word/he_ops.py:263:__init__": {
+          "count": 1058,
+          "total_ms": 2061789.818068011
+        },
+        "/home/zohaib/CROSS_dev/jaxite_word/he_ops.py:346:__init__": {
+          "count": 28,
+          "total_ms": 39374.13077899964
+        },
+        "/home/zohaib/CROSS_dev/jaxite_word/he_ops.py:106:__init__": {
+          "count": 24,
+          "total_ms": 33087.852132998705
+        },
+        "/home/zohaib/CROSS_dev/jaxite_word/he_ops.py:127:__init__": {
+          "count": 12,
+          "total_ms": 27535.13210200026
+        }
+      },
+      "average_ms": 797.5027087742563
+    },
+    "online.relinearize": {
+      "count": 3,
+      "total_ms": 22224.164030999873,
+      "callsites": {
+        "<unknown>": {
+          "count": 3,
+          "total_ms": 22224.164030999873
+        }
+      },
+      "average_ms": 7408.054676999957
+    },
+    "online.rescale": {
+      "count": 37,
+      "total_ms": 52064.97885099861,
+      "callsites": {
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21426:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 12572.828176000257
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21429:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 9144.906758000161
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21434:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 20.349058999727276
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21439:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.043988999783323
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21444:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.12300999993022
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21449:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.232630000056815
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21454:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.428190000122413
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21459:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.137159000161773
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21464:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.611459000112518
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21469:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.663169000068592
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21474:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.401790000098117
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21479:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.528409000031388
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21484:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.866388999867922
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21489:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.206129999929544
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21494:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.91622900029688
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21499:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.6635289996957
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21504:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 20.050639999681152
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21509:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.011739000030502
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21514:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.210419000046386
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21519:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.330238999827998
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21524:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 20.10275900011038
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21529:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 20.023930000206747
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21534:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.2005489998337
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21539:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.237389999943844
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23548:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 7523.932348000017
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23551:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 6722.846210999705
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23556:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.917349000024842
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23561:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.549439000002167
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23566:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.83119899957819
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23571:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.969429000411765
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23576:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 19.026199000109045
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23705:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 6974.029381000037
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23708:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 5357.121777999964
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23713:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.975088999468426
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23718:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.747059999441262
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23723:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 18.772849000015412
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23787:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 3195.186779999858
+        }
+      },
+      "average_ms": 1407.16159056753
+    },
+    "online.rotate": {
+      "count": 128,
+      "total_ms": 37724.35259700024,
+      "callsites": {
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17269:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 14167.109415999676
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17273:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.50705800034484
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17277:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 62.423877000128414
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17281:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.80184699992242
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17285:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 62.70829700042668
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17289:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 62.3630170002798
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17293:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 61.15096799976527
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17297:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.38581699967472
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17301:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.914677999946434
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17305:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 62.766467000074044
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17309:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 67.10553700031596
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17313:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.4898369999064
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17317:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.6885369999618
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17321:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 62.80952699989939
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17325:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 69.65362700020705
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17329:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.037216999873635
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17333:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 55.950777000361995
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17337:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.86078699961217
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17341:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 62.04315700006191
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17345:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.47798699991836
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17349:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.69555700005003
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17353:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 66.28573700027118
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17357:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.28328800029703
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17361:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 71.38556699965193
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17365:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.46520800000144
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17369:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.71548699983032
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17373:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 66.61483699963355
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17377:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.59926700017604
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17381:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.96117699998649
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17385:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 67.27098700002898
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17389:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 66.42368799975884
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17520:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 61.57703799999581
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17648:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.00482699998611
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17776:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.42906700021922
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:17904:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 65.63028700020368
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:18032:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 65.02712800011068
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:18160:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 60.000627000135864
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:18288:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.31576699994912
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:18416:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 65.98170699999173
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:18544:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 61.25980699971478
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:18672:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 65.01639799989789
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:18800:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 66.6096079999079
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:18928:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.63350700005321
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:19056:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 66.38621799993416
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:19184:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.61367699967013
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:19312:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.67851800041535
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:19440:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 65.58127700009209
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:19568:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 67.15090700026849
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:19696:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.84320799998022
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:19824:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 66.64551700032462
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:19952:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 68.32650699971055
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:20080:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 66.700247999961
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:20208:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.0917970001974
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:20336:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 64.54575699990528
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:20464:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 66.61101700001382
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:20592:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 66.32981700022356
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:20720:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 68.69069699996544
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:20848:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.82669699996768
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:20976:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 67.23208699986571
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21104:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 63.296737000200665
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21232:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 67.76773799992952
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21360:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 84.39472700001716
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21433:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 1073.9937579996877
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21438:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 53.52257799995641
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21443:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 55.82956800026295
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21448:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 54.33384700017996
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21453:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 55.37330800007112
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21458:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 53.61656700006279
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21463:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.10322700022152
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21468:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 58.86267699997916
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21473:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 53.12151799989806
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21478:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 57.605297999998584
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21483:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 55.20530800004053
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21488:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 57.322847999785154
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21493:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 55.10900799981755
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21498:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 55.06761800006643
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21503:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 58.23986799987324
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21508:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 54.42559800030722
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21513:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.304458000340674
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21518:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 55.870838000373624
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21523:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 57.65330699978222
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21528:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.80215799930011
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21533:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.031917999462166
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21538:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 54.668487999151694
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21634:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 5294.234145999326
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21726:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 61.76242800029286
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21818:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 57.687278000230435
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:21910:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 53.98435799997969
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22002:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.249297999784176
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22094:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.474197000170534
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22186:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.58933700033231
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22278:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.14403700019466
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22370:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 55.43664800006809
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22462:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.4690379997046
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22554:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.65506799959985
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22646:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 57.07378700026311
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22738:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.296018000466574
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22830:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.532707999394916
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:22922:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.36754799979826
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23014:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.47186799978954
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23106:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 62.83110799995484
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23198:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 56.45400699995662
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23290:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 57.20670800019434
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23382:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 62.478778000695456
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23474:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 58.550347999698715
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23498:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 55.93866799972602
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23543:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 61.653376999856846
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23555:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 1121.593632999975
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23560:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 48.58734800018283
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23565:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 46.92254800011142
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23570:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 49.280367999926966
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23575:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 45.9196179999708
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23603:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 4359.349659000145
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23627:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 46.33536800065485
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23651:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 48.320388000320236
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23675:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 48.5161770002378
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23683:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 47.20973799976491
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23694:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 48.02246799954446
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23696:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 47.00991800018528
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23698:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 47.87100800058397
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23700:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 47.66252799981885
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23712:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 921.4716520000366
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23717:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 39.4983879996289
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23722:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 39.694878000773315
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23742:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 3612.8759929997614
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23758:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 39.74042800018651
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23774:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 40.74449800009461
+        },
+        "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n8192_cross.py:23781:lenet__preprocessed": {
+          "count": 1,
+          "total_ms": 40.97332799938158
+        }
+      },
+      "average_ms": 294.72150466406435
+    }
+  },
+  "xprof_path": null,
+  "xprof_duration_seconds": null
+}

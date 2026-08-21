@@ -1,0 +1,26 @@
+
+[2026-08-18T14:19:35Z] Starting alexnet-tiny-16k CPU correctness
+result_json=/home/zohaib/heir-private/benchmark-results/alexnet-16k-cpu-correctness/alexnet-tiny-16k-16384-cpu-20260818T141938Z/result.json
+ordinary_status=PASS max_error=6.286160e-06
+calibrated_status=PASS max_error=5.072026e-06
+compute_median_ms=3478954.000
+[2026-08-18T15:37:55Z] alexnet-tiny-16k correctness passed; starting operation profile
+result_json=/home/zohaib/heir-private/benchmark-results/alexnet-16k-cpu-operations/alexnet-tiny-16k-16384-cpu-20260818T153758Z/result.json
+ordinary_status=PASS max_error=6.286160e-06
+calibrated_status=PASS max_error=5.072026e-06
+compute_median_ms=3487175.843
+[2026-08-18T16:56:27Z] alexnet-tiny-16k operation profile exited with status 0
+
+[2026-08-18T16:56:27Z] Starting alexnet-tiny-32k CPU correctness
+result_json=/home/zohaib/heir-private/benchmark-results/alexnet-32k-cpu-correctness/alexnet-tiny-32k-32768-cpu-20260818T165629Z/result.json
+ordinary_status=PASS max_error=6.286160e-06
+calibrated_status=PASS max_error=5.137240e-06
+compute_median_ms=7857641.157
+[2026-08-18T19:50:35Z] alexnet-tiny-32k correctness passed; starting operation profile
+result_json=/home/zohaib/heir-private/benchmark-results/alexnet-32k-cpu-operations/alexnet-tiny-32k-32768-cpu-20260818T195038Z/result.json
+ordinary_status=PASS max_error=6.286160e-06
+calibrated_status=PASS max_error=5.137240e-06
+compute_median_ms=7866574.820
+[2026-08-18T22:46:27Z] alexnet-tiny-32k operation profile exited with status 0
+
+[2026-08-18T22:46:27Z] AlexNet CPU queue complete

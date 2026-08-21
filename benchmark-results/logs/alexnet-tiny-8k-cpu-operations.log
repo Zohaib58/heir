@@ -1,0 +1,4 @@
+result_json=/home/zohaib/heir-private/benchmark-results/alexnet-8k-cpu-operations/alexnet-tiny-8k-8192-cpu-20260818T131832Z/result.json
+ordinary_status=PASS max_error=5.451695e-06
+calibrated_status=PASS max_error=4.367160e-06
+compute_median_ms=1923551.877

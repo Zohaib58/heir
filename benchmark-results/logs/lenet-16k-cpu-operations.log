@@ -1,0 +1,4 @@
+result_json=/home/zohaib/heir-private/benchmark-results/lenet-16k-cpu-operations/lenet-16k-16384-cpu-20260819T094633Z/result.json
+ordinary_status=PASS max_error=3.721543e-05
+calibrated_status=PASS max_error=6.068378e-06
+compute_median_ms=6811129.456

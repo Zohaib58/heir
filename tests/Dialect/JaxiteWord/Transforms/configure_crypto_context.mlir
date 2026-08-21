@@ -1,4 +1,4 @@
-// RUN: heir-opt --jaxiteword-configure-crypto-context=entry-function=simple_mul %s | FileCheck %s
+// RUN: heir-opt --jaxiteword-configure-crypto-context='entry-function=simple_mul scaling-factor=287650127344009217' %s | FileCheck %s
 
 !Z35184372121601_i64 = !mod_arith.int<35184372121601 : i64>
 !Z36028797018652673_i64 = !mod_arith.int<36028797018652673 : i64>
@@ -37,6 +37,7 @@ module attributes {ckks.schemeParam = #ckks.scheme_param<logN = 13, Q = [3602879
 // CHECK: jaxiteword.gen_params
 // CHECK-SAME: degree = 8192
 // CHECK-SAME: numSlots = 4096
+// CHECK-SAME: scalingFactor = 2.8765012734400922E+17
 
 // CHECK: @simple_mul__configure_crypto_context
 // CHECK-SAME: !jaxiteword.crypto_context

@@ -1,0 +1,4 @@
+result_json=/home/zohaib/heir-private/benchmark-results/alexnet-16k-tpu-timing/alexnet-tiny-16k-16384-tpu-20260817T034912Z/result.json
+ordinary_status=PASS max_error=6.286160e-06
+calibrated_status=PASS max_error=5.072026e-06
+compute_median_ms=2035410.112

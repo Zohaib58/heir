@@ -39,7 +39,9 @@ def ConfigureCryptoContext : Pass<"jaxiteword-configure-crypto-context"> {
            /*default=*/"1", "Number of Q moduli per logical rescale step. "
            "Passed through to CROSS for composite rescaling.">,
     Option<"scalingFactor", "scaling-factor", "double",
-           /*default=*/"563019763943521.0", "Default scaling factor.">,
+           /*default=*/"0.0", "Scaling factor override. A positive value "
+           "takes precedence over ckks.schemeParam; zero uses "
+           "2^logDefaultScale from the scheme parameters.">,
   ];
 }
 

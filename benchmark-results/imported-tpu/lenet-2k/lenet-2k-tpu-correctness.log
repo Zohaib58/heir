@@ -1,0 +1,4 @@
+result_json=/home/zohaib/heir-private/benchmark-results/lenet-2k-tpu-correctness/lenet-2k-2048-tpu-20260817T073819Z/result.json
+ordinary_status=FAIL max_error=4.991971e+01
+calibrated_status=FAIL max_error=inf
+compute_median_ms=325290.305

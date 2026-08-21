@@ -1,0 +1,295 @@
+{
+  "model": "lenet-2k",
+  "timestamp_utc": "20260817T073819Z",
+  "manifest": "/home/zohaib/heir-private/tests/CROSS/benchmark_models.json",
+  "configuration": {
+    "enabled": true,
+    "mlir_path": "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n2048.mlir",
+    "generated_python_path": "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n2048_cross.py",
+    "pristine_python_path": "/home/zohaib/heir-private/tests/CROSS/lenet/generated/lenet-n2048_cross.py",
+    "entry_point": "lenet",
+    "adapter": "lenet",
+    "input_shape": [
+      1,
+      1,
+      28,
+      28
+    ],
+    "output_shape": [
+      10
+    ],
+    "trained_weight_source": "/home/zohaib/CROSS_dev/demos/maple_data/lenet_*.bin",
+    "seed": 42,
+    "correctness": {
+      "abs_tol": 0.15,
+      "rel_tol": 0.15,
+      "require_argmax_match": true
+    },
+    "crypto_profile": "lenet-2k",
+    "computation_sha256": "4eca41b5cf881b4b118c1de33cdc9656024090ab1bd98617eaff1f9fc3484ff9",
+    "notes": "Existing CROSS 2K CD1 correctness parameters. Generated Python is unpatched.",
+    "crypto": {
+      "slot_count": 1024,
+      "q_towers": [
+        536903681,
+        536924161,
+        536952833,
+        536973313,
+        536977409,
+        536989697,
+        537026561,
+        537047041,
+        537071617
+      ],
+      "p_towers": [
+        2147565569,
+        2147573761,
+        2147577857,
+        2147721217
+      ],
+      "scaling_factor": 2.8827655845873664e+17,
+      "log_default_scale": 58,
+      "dnum": 4,
+      "r": 32,
+      "c": 64,
+      "composite_degree": 1,
+      "security_qualified": false,
+      "security_note": "Existing CROSS correctness/benchmark parameter set; no 128-bit security claim.",
+      "output_scale": 2.8827655845873664e+17,
+      "batch": 1,
+      "ring_degree": 2048
+    }
+  },
+  "environment": {
+    "requested_device": "tpu",
+    "jax_backend": "tpu",
+    "jax_devices": [
+      "TPU_0(process=0,(0,0,0,0))",
+      "TPU_1(process=0,(1,0,0,0))",
+      "TPU_2(process=0,(0,1,0,0))",
+      "TPU_3(process=0,(1,1,0,0))",
+      "TPU_4(process=0,(0,2,0,0))",
+      "TPU_5(process=0,(1,2,0,0))",
+      "TPU_6(process=0,(0,3,0,0))",
+      "TPU_7(process=0,(1,3,0,0))"
+    ],
+    "python": "3.12.14 (main, Aug 14 2026, 15:34:45) [Clang 22.1.3 ]",
+    "cross_root": "/home/zohaib/CROSS_dev"
+  },
+  "iterations": {
+    "warmups": 0,
+    "repeats": 1
+  },
+  "measurement_mode": "clean",
+  "integrity": {
+    "pristine": {
+      "sha256": "4eca41b5cf881b4b118c1de33cdc9656024090ab1bd98617eaff1f9fc3484ff9",
+      "operation_counts": {
+        "add": 1586,
+        "add_plain": 4,
+        "matvec": 0,
+        "multiply": 3,
+        "plaintext_ciphertext_multiply": 1584,
+        "relinearize": 3,
+        "rescale": 37,
+        "rotate": 128,
+        "square": 0
+      }
+    },
+    "runnable": {
+      "sha256": "4eca41b5cf881b4b118c1de33cdc9656024090ab1bd98617eaff1f9fc3484ff9",
+      "operation_counts": {
+        "add": 1586,
+        "add_plain": 4,
+        "matvec": 0,
+        "multiply": 3,
+        "plaintext_ciphertext_multiply": 1584,
+        "relinearize": 3,
+        "rescale": 37,
+        "rotate": 128,
+        "square": 0
+      }
+    },
+    "passed": true
+  },
+  "correctness": {
+    "ordinary": {
+      "passed": false,
+      "finite": true,
+      "nonzero": false,
+      "max_error": 49.91970732040786,
+      "relative_error": 1.0,
+      "actual_argmax": 0,
+      "expected_argmax": 4,
+      "argmax_match": false,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        -11.740866638379742,
+        -15.002566377754825,
+        -19.618289154281275,
+        -21.499298671581155,
+        49.91970732040786,
+        -10.955186783276412,
+        -9.00078716956192,
+        -0.880639964702949,
+        10.389509403161945,
+        23.373854942249842
+      ]
+    },
+    "calibrated": {
+      "passed": false,
+      "finite": false,
+      "nonzero": true,
+      "max_error": "inf",
+      "relative_error": "inf",
+      "actual_argmax": null,
+      "expected_argmax": 4,
+      "argmax_match": false,
+      "actual": [
+        "nan",
+        "nan",
+        "nan",
+        "nan",
+        "nan",
+        "nan",
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ],
+      "expected": [
+        -11.740866638379742,
+        -15.002566377754825,
+        -19.618289154281275,
+        -21.499298671581155,
+        49.91970732040786,
+        -10.955186783276412,
+        -9.00078716956192,
+        -0.880639964702949,
+        10.389509403161945,
+        23.373854942249842
+      ]
+    }
+  },
+  "ciphertext_shape": [
+    1,
+    2,
+    32,
+    64,
+    2
+  ],
+  "timings": {
+    "generate_crypto_context": {
+      "samples_ms": [
+        0.01795000002857705
+      ],
+      "median_ms": 0.01795000002857705,
+      "min_ms": 0.01795000002857705,
+      "max_ms": 0.01795000002857705,
+      "stddev_ms": 0.0
+    },
+    "keygen_pke": {
+      "samples_ms": [
+        494.89049900000737
+      ],
+      "median_ms": 494.89049900000737,
+      "min_ms": 494.89049900000737,
+      "max_ms": 494.89049900000737,
+      "stddev_ms": 0.0
+    },
+    "keygen_eval": {
+      "samples_ms": [
+        1164.020822999987
+      ],
+      "median_ms": 1164.020822999987,
+      "min_ms": 1164.020822999987,
+      "max_ms": 1164.020822999987,
+      "stddev_ms": 0.0
+    },
+    "eval_key_layout": {
+      "samples_ms": [
+        102.92817499998819
+      ],
+      "median_ms": 102.92817499998819,
+      "min_ms": 102.92817499998819,
+      "max_ms": 102.92817499998819,
+      "stddev_ms": 0.0
+    },
+    "configure_crypto_context": {
+      "samples_ms": [
+        125462.57307099995
+      ],
+      "median_ms": 125462.57307099995,
+      "min_ms": 125462.57307099995,
+      "max_ms": 125462.57307099995,
+      "stddev_ms": 0.0
+    },
+    "encrypt": {
+      "samples_ms": [
+        234.79964200009817
+      ],
+      "median_ms": 234.79964200009817,
+      "min_ms": 234.79964200009817,
+      "max_ms": 234.79964200009817,
+      "stddev_ms": 0.0
+    },
+    "preprocessing": {
+      "samples_ms": [
+        15201.29034599995
+      ],
+      "median_ms": 15201.29034599995,
+      "min_ms": 15201.29034599995,
+      "max_ms": 15201.29034599995,
+      "stddev_ms": 0.0
+    },
+    "preprocessed_compute": {
+      "samples_ms": [
+        325290.3050960001
+      ],
+      "median_ms": 325290.3050960001,
+      "min_ms": 325290.3050960001,
+      "max_ms": 325290.3050960001,
+      "stddev_ms": 0.0
+    },
+    "decrypt": {
+      "samples_ms": [
+        506.90058099985436
+      ],
+      "median_ms": 506.90058099985436,
+      "min_ms": 506.90058099985436,
+      "max_ms": 506.90058099985436,
+      "stddev_ms": 0.0
+    },
+    "online_total": {
+      "samples_ms": [
+        341233.295665
+      ],
+      "median_ms": 341233.295665,
+      "min_ms": 341233.295665,
+      "max_ms": 341233.295665,
+      "stddev_ms": 0.0
+    }
+  },
+  "scales": {
+    "output": [
+      2.8827655845873664e+17
+    ],
+    "calibrated": [
+      0.0
+    ]
+  },
+  "operation_profile": null,
+  "xprof_path": null,
+  "xprof_duration_seconds": null
+}

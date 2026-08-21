@@ -1,0 +1,6 @@
+{
+  "status": "CAPTURE_COMPLETE",
+  "capture_duration_seconds": 30.0,
+  "correctness": "skipped; validated in a separate benchmark run",
+  "xprof_path": "/home/zohaib/heir-private/benchmark-results/alexnet-16k-tpu-xprof/alexnet-tiny-16k-16384-tpu-20260818T034919Z/xprof"
+}

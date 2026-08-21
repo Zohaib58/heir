@@ -1,0 +1,4 @@
+result_json=/home/zohaib/heir-private/benchmark-results/alexnet-16k-cpu-operations/alexnet-tiny-16k-16384-cpu-20260818T153758Z/result.json
+ordinary_status=PASS max_error=6.286160e-06
+calibrated_status=PASS max_error=5.072026e-06
+compute_median_ms=3487175.843

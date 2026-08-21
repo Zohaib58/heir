@@ -1,0 +1,4 @@
+result_json=/home/zohaib/heir-private/benchmark-results/alexnet-32k-cpu-operations/alexnet-tiny-32k-32768-cpu-20260818T195038Z/result.json
+ordinary_status=PASS max_error=6.286160e-06
+calibrated_status=PASS max_error=5.137240e-06
+compute_median_ms=7866574.820
